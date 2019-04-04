@@ -1,5 +1,7 @@
 package artem;
 
+import java.util.Optional;
+
 public interface TimeCalculator {
-    public String calculate(TimeCalcArguments arguments);
+    Response calculate(TimeCalcArguments arguments);
 }
