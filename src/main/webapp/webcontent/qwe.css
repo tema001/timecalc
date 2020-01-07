@@ -5,8 +5,8 @@
 /* ========= Resets and Housekeeping ========= */
 
 body {
-    background: #FFAFBD;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
+    background: #FFAFBD; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffc3a0, #FFAFBD); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: 'Varela Round', sans-serif;
     margin: 0;
@@ -15,18 +15,20 @@ body {
 h1 {
     margin: 0;
     font: normal 2.5em "Fredoka One";
-    color: #7074BC;
+    color: #9270bc;
+    /*old color #7074bc*/
 }
 
 h2 {
     margin: 0;
     font: normal 1.8em "Fredoka One";
-    color: #7074BC;
+    color: #9270bc;
 }
 
 /* ========= Card =========  */
 
 .card {
+    position: relative;
     background: #fffafa;
     border-radius: 5px;
     font-size: 18px;
@@ -53,55 +55,6 @@ h2 {
     color: rgba(0, 0, 0, .6);
 }
 
-/* ========= Radio Button ========= */
-
-.custom-radio-group {
-    margin: 5px 0;
-}
-
-.custom-radio-group input[type="radio"] {
-    position: absolute;
-    display: none;
-}
-
-.custom-radio-group label {
-    position: relative;
-    display: inline-block;
-    padding: 5px 10px 5px 24px;
-    font-size: 13pt;
-    color: #7074BC;
-    cursor: pointer;
-    z-index: 0;
-    transition: .25s all;
-}
-
-.custom-radio-group label:before {
-    position: absolute;
-    top: 18%;
-    left: 0;
-    content: " ";
-    border: 2px solid #7074BC;
-    border-radius: 10px;
-    width: 15px;
-    height: 15px;
-    transition: .3s all;
-}
-
-.custom-radio-group input[type="radio"]:checked + label {
-    color: #fffafa;
-    padding: 5px 17px 5px 17px;
-}
-
-.custom-radio-group input[type="radio"]:checked + label:before {
-    border: none;
-    border-radius: 30px;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #7074BC;
-    z-index: -1;
-}
-
 /* ========= Text Input ========= */
 
 input[type="text"].custom-input-text {
@@ -115,7 +68,7 @@ input[type="text"].custom-input-text {
     margin: 5px 0;
     width: 12em;
     border-radius: 30px;
-    border: 2px solid #7074BC;
+    border: 2px solid #9270bc;
     background-color: #fffafa;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
@@ -131,27 +84,27 @@ input[type="text"].mini-input {
 
 .custom-input-text-group {
     display: block;
+    position: relative;
     text-align: center;
     margin: 0;
 }
 
 input[type="text"].custom-input-text + label.input-close {
-    position: absolute;
-    visibility: hidden;
+    font-family: "Source Sans Pro", sans-serif;
     cursor: pointer;
-    margin: 0.7em 0 0 0.7em;
-    width: 1.3em;
-    height: 1.3em;
-    font-size: 0.8em;
-    border-radius: 10px;
-    background-color: tomato;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    line-height: 1.2em;
+    position: absolute;
+    color: #fc7070;
+    font-size: 2em;
 }
 
 input[type="text"].custom-input-text + label.input-close:before {
-    content: 'x';
-    padding: 1px 0 0 1px;
-    text-align: center;
-    color: #fffafa;
+    content: '+';
+    transform: rotate(45deg);
+    display: block;
 }
 
 .custom-input-text-group:hover input[type="text"].custom-input-text + label.input-close {
@@ -165,23 +118,23 @@ input[type="text"].custom-input-text + label.input-close:before {
     font-style: italic;
     cursor: pointer;
     border-radius: 30px;
-    color: #7074BC;
+    color: #9270bc;
     background-color: #fffafa;
     font-size: 1em;
     width: 5em;
     padding: 0.4em 0.8em;
     margin: 10px 0;
-    border: 2px solid #7074BC;
+    border: 2px solid #9270bc;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     transition: .2s;
 }
 
 .custom-button:hover {
     color: #fffafa;
-    background-color: #7074BC;
+    background-color: #9270bc;
 }
 
-.custom-button:focus{
+.custom-button:focus {
     outline: none;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
@@ -227,7 +180,6 @@ p.custom-modal-button:hover {
 }
 
 .custom-modal .content {
-    margin: 0;
     white-space: pre-line;
     font-size: .82em;
 }
@@ -255,4 +207,85 @@ p.custom-modal-button:hover {
     display: none;
     border-top: 2px solid rgba(0, 0, 0, 0.1);
     padding-top: 8px;
+}
+
+/* ========= Tooltip ========= */
+
+.tlp {}
+
+.tlp .tooltip {
+    display: none;
+    position: absolute;
+    width: 150px;
+    margin: 0 auto;
+    padding: 10px 10px;
+    background: #96c1fd;
+    color: #fffafa;
+    font-size: 0.8em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    border-radius: 9px;
+}
+
+.tlp .tooltip.tlp-active {
+    display: block;
+}
+
+.tlp .tooltip:after {
+    content: "";
+    position: absolute;
+    left: 96%;
+    bottom: 38%;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #96c1fd transparent transparent transparent;
+    transform: rotate(-90deg);
+}
+
+.tlp .tooltip.md {
+    bottom: 20%;
+    right: 113%;
+}
+
+.tlp .tooltip.lg {
+    left: -56%;
+    bottom: -134%;
+}
+
+.tooltip-left:after {
+
+}
+
+.tooltip, .tooltip:after {
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s linear;
+}
+
+.tlp:hover .tooltip, .tlp:hover .tooltip:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ========= Ribbon ========= */
+
+.help-ribbon {
+    position: absolute;
+    left: 100%;
+    width: 2.6em;
+    padding: 3px 5px;
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: right;
+    background-color: #fdfd83;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.help-ribbon.is-active {
+    background-color: #fc7070;
+    width: 4em;
+}
+
+.help-ribbon:hover {
+    width: 4em;
 }

@@ -24,7 +24,7 @@ public class SimpleTimeCalculator extends Description implements TimeCalculator 
             return Response.create(getHours(result), this.getResult());
 
         } catch (RuntimeException e) {
-            return Response.create(e.getMessage(), "see the description nibba");
+            return Response.create(e.getMessage(), "check out description");
         }
     }
 

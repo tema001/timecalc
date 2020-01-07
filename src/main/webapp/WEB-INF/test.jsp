@@ -12,10 +12,14 @@
 <div class="card md">
     <h2>time calculator</h2>
 
+    <div class="help-ribbon">help?</div>
+
     <div class="flex-row">
-        <div class="card mini-card">
+        <div class="card mini-card tlp">
             <p>Start</p>
             <input id="input-start" class="custom-input-text mini-input" type="text">
+
+            <div class="tooltip md">24-hour clock, strict record form <b>23(;/:)59</b></div>
         </div>
 
         <div class="card mini-card">
@@ -51,13 +55,30 @@
     });
 
     $('#add-button').click(function () {
-        $('.inputs-area').append($('<div>', {class: 'custom-input-text-group'})
+        $('.inputs-area').append($('<div>', {class: 'custom-input-text-group tlp'})
             .append($('<input>', {class: 'custom-input-text', type: 'text', name: 'args-input'}))
-            .append($('<label>', {class: 'input-close'})));
+            .append($('<label>', {class: 'input-close'}))
+            .append($('<div>', {class: 'tooltip lg', text: description})));
     });
+
+    var description = "there are 2 types of recording: a record in total time, " +
+        "strict record form +/- 59 only for minutes, " +
+        " +/- 1(./,)00 for hours and minutes; " +
+        "a record in time range, strict record form +/- 23(;/:)59 23(;/:)59";
 
     $('.card').on('click', 'label.input-close', function () {
         $(this).parent().remove();
+    });
+
+    $('.card').on('click', '.help-ribbon', function () {
+        var actv = 'is-active';
+        if ($(this).hasClass(actv)) {
+            $(this).removeClass(actv);
+            $('.tooltip').removeClass('tlp-active');
+        } else if (!$(this).hasClass(actv)) {
+            $(this).addClass(actv);
+            $('.tooltip').addClass('tlp-active');
+        }
     });
 
     $('.card').on('click', '.custom-modal-button', function () {
