@@ -14,15 +14,15 @@
 
     <div class="help-ribbon">help?</div>
 
-    <div class="flex-row">
-        <div class="card mini-card tlp">
+    <div class="mini-card flex-row">
+        <div class="main-input-text-group tlp">
             <p>Start</p>
             <input id="input-start" class="custom-input-text mini-input" type="text">
 
             <div class="tooltip md">24-hour clock, strict record form <b>23(;/:)59</b></div>
         </div>
 
-        <div class="card mini-card">
+        <div class="main-input-text-group">
             <p>Finish</p>
             <input id="input-finish" class="custom-input-text mini-input" type="text">
         </div>
@@ -75,7 +75,7 @@
         if ($(this).hasClass(actv)) {
             $(this).removeClass(actv);
             $('.tooltip').removeClass('tlp-active');
-        } else if (!$(this).hasClass(actv)) {
+        } else /*if (!$(this).hasClass(actv))*/ {
             $(this).addClass(actv);
             $('.tooltip').addClass('tlp-active');
         }

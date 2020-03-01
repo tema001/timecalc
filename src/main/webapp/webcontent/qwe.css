@@ -31,21 +31,21 @@ h2 {
     position: relative;
     background: #fffafa;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 25.7px;
     padding: 15px;
     box-sizing: border-box;
     box-shadow: 0 6px 20px rgba(0, 0, 0, .2);
 }
 
 .md {
-    width: 350px;
+    width: 500px;
     margin: 50px auto;
 }
 
 .mini-card {
-    margin: 10px 0;
-    flex-basis: 45%;
+    margin: 10px;
     padding: 10px;
+    border-radius: 5px;
     box-shadow: 1px 2px 6px rgba(0, 0, 0, .2);
 }
 
@@ -53,6 +53,16 @@ h2 {
     margin: 0;
     font-size: 1em;
     color: rgba(0, 0, 0, .6);
+}
+
+.main-input-text-group {
+    flex-basis: 45%;
+    position: relative;
+}
+
+.main-input-text-group:nth-child(n+2) {
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+    padding-left: 0.6em;
 }
 
 /* ========= Text Input ========= */
@@ -95,7 +105,7 @@ input[type="text"].custom-input-text + label.input-close {
     width: 1em;
     height: 1em;
     text-align: center;
-    line-height: 1.2em;
+    line-height: 1.1em;
     position: absolute;
     color: #fc7070;
     font-size: 2em;
@@ -121,8 +131,8 @@ input[type="text"].custom-input-text + label.input-close:before {
     color: #9270bc;
     background-color: #fffafa;
     font-size: 1em;
-    width: 5em;
-    padding: 0.4em 0.8em;
+    width: 5.2em;
+    padding: 0.3em 0.8em;
     margin: 10px 0;
     border: 2px solid #9270bc;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -171,12 +181,12 @@ p.custom-modal-button:hover {
 .custom-modal {
     visibility: hidden;
     position: absolute;
-    width: 180px;
+    width: 10em;
     opacity: 0;
+    margin: 0;
     transition: opacity 0.5s 0s, visibility 0s 0.5s;
     top: 0;
-    right: -50%;
-    margin: 0;
+    right: -46%;
 }
 
 .custom-modal .content {
@@ -211,12 +221,13 @@ p.custom-modal-button:hover {
 
 /* ========= Tooltip ========= */
 
-.tlp {}
+.tlp {
+}
 
 .tlp .tooltip {
     display: none;
     position: absolute;
-    width: 150px;
+    width: 10em;
     margin: 0 auto;
     padding: 10px 10px;
     background: #96c1fd;
@@ -236,23 +247,19 @@ p.custom-modal-button:hover {
     left: 96%;
     bottom: 38%;
     border-style: solid;
-    border-width: 10px 10px 0 10px;
+    border-width: 0.7em 0.7em 0 0.7em;
     border-color: #96c1fd transparent transparent transparent;
     transform: rotate(-90deg);
 }
 
 .tlp .tooltip.md {
-    bottom: 20%;
-    right: 113%;
+    bottom: -9%;
+    right: 112%;
 }
 
 .tlp .tooltip.lg {
-    left: -56%;
-    bottom: -134%;
-}
-
-.tooltip-left:after {
-
+    left: -47%;
+    bottom: -150%;
 }
 
 .tooltip, .tooltip:after {
@@ -288,4 +295,14 @@ p.custom-modal-button:hover {
 
 .help-ribbon:hover {
     width: 4em;
+}
+
+@media screen and (max-width: 800px) {
+    .card {
+        font-size: 20.4px;
+    }
+
+    .md {
+        width: 400px;
+    }
 }
