@@ -45,7 +45,7 @@
     </build>
 
     <properties>
-        <spring.ver>4.3.17.RELEASE</spring.ver>
+        <spring.ver>5.2.20.RELEASE</spring.ver>
     </properties>
 
     <dependencies>
